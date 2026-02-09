@@ -1,0 +1,248 @@
+.tableContainer {
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr 1.5fr 0.3fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: #fafafa;
+  border-bottom: 1px solid #e8e8ed;
+}
+
+.th {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  display: flex;
+  align-items: center;
+}
+
+.scrollControls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.scrollBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.scrollBtn:hover {
+  color: var(--color-text-secondary);
+}
+
+.menuIcon {
+  color: var(--color-text-muted);
+}
+
+.tableBody {
+  min-height: 400px;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr 1.5fr 0.3fr;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: background var(--transition);
+  cursor: pointer;
+}
+
+.tableRow:hover {
+  background: #fafafa;
+}
+
+.tableRow.highlighted {
+  border-left: 4px solid var(--color-gold);
+  padding-left: calc(1.5rem - 4px);
+  background: #fffef5;
+}
+
+.td {
+  display: flex;
+  align-items: center;
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.projectName {
+  font-weight: 500;
+  color: var(--color-text-primary);
+  font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.attachmentIcon {
+  flex-shrink: 0;
+}
+
+.projectDates {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.badge {
+  padding: 0.375rem 0.875rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.badgePequeño {
+  background: var(--color-orange);
+  color: white;
+}
+
+.badgeAvanzado {
+  background: var(--color-gray);
+  color: white;
+}
+
+.badgePremium {
+  background: var(--color-gold);
+  color: var(--color-text-primary);
+}
+
+.badgeActivo {
+  background: var(--color-green-bg);
+  color: var(--color-green-text);
+}
+
+.badgeInactivo {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.badgeSuspendido {
+  background: #fed7aa;
+  color: #c2410c;
+}
+
+.badgePendiente {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.avatars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  border: 2px solid var(--color-bg-secondary);
+  margin-left: -8px;
+  flex-shrink: 0;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.avatarHighlight {
+  background: var(--color-gold);
+  color: var(--color-text-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.itemsGroup {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.itemNumber {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.itemLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (max-width: 1400px) {
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr 0.3fr;
+  }
+
+  .itemsGroup {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .tableHeader {
+    display: none;
+  }
+
+  .tableRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .tableRow.highlighted {
+    padding-left: calc(1rem - 4px);
+  }
+
+  .td {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .itemsGroup {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
